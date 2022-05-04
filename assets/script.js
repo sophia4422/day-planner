@@ -5,3 +5,7 @@ $("#currentDay").text(moment().format("ddd, MMMM, YYYY HH:mm"));
 
 // target save button
 const saveButton = $("saveBtn");
+
+saveButton.on("click", function () {
+  console.log("button clicked");
+});
