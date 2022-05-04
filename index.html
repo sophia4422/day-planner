@@ -18,19 +18,33 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
-
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- target this to make the date and time appear?-->
       <p id="currentDay" class="lead"></p>
     </header>
+
     <div class="container">
+      <!-- this class has no css atm-->
       <!-- Timeblocks go here -->
+
+      <!-- typical work day 9-6 -->
+      <!-- div for the whole hour block -->
+      <div class="time-block row">
+        <!-- div for the text: 9am -->
+        <div class="hour">9am</div>
+        <!-- a div for where you write your text -->
+        <div class="textarea">Write your message here</div>
+        <!-- a button to press save -->
+        <button class="saveBtn">Save</button>
+      </div>
     </div>
+    <!-- end of container div-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
