@@ -1,11 +1,4 @@
 //accessing date and time
-const currentDateTimeStamp = moment();
+const currentDateStamp = moment();
 
-//current hour
-const currentHour = moment().hour();
-
-currentDateTimeStamp.format("ddd, Do MMM, YYYY");
-
-console.log(currentDateTimeStamp);
-
-console.log(currentHour);
+$("#currentDay").text(moment().format("ddd, MMMM, YYYY HH:mm"));
