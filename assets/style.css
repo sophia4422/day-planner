@@ -25,6 +25,7 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* I made this container */
 .container {
   display: flex;
   flex-direction: column;
@@ -60,7 +61,7 @@ textarea {
 
 .future {
   background-color: #77dd77;
-  color: grey;
+  color: white;
 }
 
 .saveBtn {
