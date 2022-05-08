@@ -43,7 +43,7 @@ const timeBlocks = $("#time-blocks");
 const currentDateStamp = moment();
 
 const renderDate = () => {
-  return moment().format("ddd, MMMM, YYYY HH:mm");
+  return moment().format("dddd, MMMM Do YYYY");
 };
 
 // target save button
@@ -109,18 +109,42 @@ const onReady = () => {
   renderTimeBlocks();
 };
 
+const readFromLocalStorage = (key, defaultValue) => {
+  //get from LS with key name
+  const dataFromLS = localStorage.getItem(key);
+
+  //parse data
+  const parsedData = JSON.parse(dataFromLS);
+
+  if (parsedData) {
+    return parsedData;
+  } else {
+    return defaultValue;
+  }
+};
+
+const writeToLocalStorage = (key, value) => {
+  //value turned to string
+  const stringifiedValue = JSON.stringify(value);
+
+  localStorage.setItem(key, stringifiedValue);
+};
+
 const saveToLocalStorage = (event) => {
   const target = $(event.target);
-  console.log("clicked");
-
-  //if target is a button
   if (target.is("button")) {
-    console.log("YAY");
+    console.log("click");
     const key = target.attr("data-hour");
     console.log(key);
-    const value = $(`textarea[data-textarea-key=${key}`]).val
+
+    const value = $(`textarea[data-textarea-key="${key}"]`).val();
     console.log(value);
-    
+
+    const planner = readFromLocalStorage("planner", {});
+
+    planner[key] = value;
+
+    writeToLocalStorage("planner", planner);
   }
 };
 
