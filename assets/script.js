@@ -118,6 +118,9 @@ const saveToLocalStorage = (event) => {
     console.log("YAY");
     const key = target.attr("data-hour");
     console.log(key);
+    const value = $(`textarea[data-textarea-key=${key}`]).val
+    console.log(value);
+    
   }
 };
 
