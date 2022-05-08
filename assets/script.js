@@ -87,9 +87,9 @@ const renderTimeBlocks = () => {
     <div class="col-md-1 col-sm-12 text-center my-1 d-flex flex-column justify-content-center">${
       workingHour.label
     }</div>
-    <textarea class="col-md-9 col-sm-12" rows="3">${getEventForTimeBlock(
+    <textarea class="col-md-9 col-sm-12" rows="3" data-textarea-key = ${
       workingHour.key
-    )}</textarea>
+    }>${getEventForTimeBlock(workingHour.key)}</textarea>
     <div class="col-md-2 col-sm-12 text-center my-1 d-flex flex-column justify-content-center">
       <button type="button" data-hour=${
         workingHour.key
