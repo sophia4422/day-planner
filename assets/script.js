@@ -37,6 +37,8 @@ const workingHours = [
   },
 ];
 
+const timeBlocks = $("#time-blocks");
+
 //accessing date and time
 const currentDateStamp = moment();
 
@@ -75,7 +77,7 @@ const getClassName = (workingHour) => {
 
 const renderTimeBlocks = () => {
   //for each working hour create and append time block to time-blocks
-  const timeBlocks = $("#time-blocks");
+
   const renderTimeBlock = (workingHour) => {
     console.log(workingHour);
     //create timeblock
@@ -106,5 +108,19 @@ const onReady = () => {
   renderDate();
   renderTimeBlocks();
 };
+
+const saveToLocalStorage = (event) => {
+  const target = $(event.target);
+  console.log("clicked");
+
+  //if target is a button
+  if (target.is("button")) {
+    console.log("YAY");
+    const key = target.attr("data-hour");
+    console.log(key);
+  }
+};
+
+timeBlocks.click(saveToLocalStorage);
 
 $(document).ready(onReady);
