@@ -59,8 +59,6 @@ $("#saveBtn").click(function () {
   console.log("button clicked");
 });
 
-const getEventForTimeBlock = (workingHour) => {};
-
 const getClassName = (workingHour) => {
   const currentHour = moment().hour();
   //if workingHour is present
@@ -110,6 +108,12 @@ const onReady = () => {
   readFromLocalStorage();
 };
 
+const getEventForTimeBlock = (workingHour) => {
+  const planner = readFromLocalStorage("planner", {});
+
+  return planner[workingHour] || "";
+};
+
 const readFromLocalStorage = (key, defaultValue) => {
   //get from LS with key name
   const dataFromLS = localStorage.getItem(key);
@@ -134,12 +138,11 @@ const saveToLocalStorage = (event) => {
     const value = $(`textarea[data-textarea-key="${key}"]`).val().trim();
     console.log(value);
 
-    // const planner = readFromLocalStorage("planner", {});
+    const planner = readFromLocalStorage("planner", {});
 
-    // planner[key] = value;
+    planner[key] = value;
 
-    // writeToLocalStorage("planner", planner);
-    writeToLocalStorage(key, value);
+    writeToLocalStorage("planner", planner);
   }
 };
 
