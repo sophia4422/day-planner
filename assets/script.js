@@ -124,13 +124,6 @@ const readFromLocalStorage = (key, defaultValue) => {
   }
 };
 
-const writeToLocalStorage = (key, value) => {
-  //value turned to string
-  const stringifiedValue = JSON.stringify(value);
-
-  localStorage.setItem(key, stringifiedValue);
-};
-
 const saveToLocalStorage = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
@@ -138,15 +131,23 @@ const saveToLocalStorage = (event) => {
     const key = target.attr("data-hour");
     console.log(key);
 
-    const value = $(`textarea[data-textarea-key="${key}"]`).val();
+    const value = $(`textarea[data-textarea-key="${key}"]`).val().trim();
     console.log(value);
 
-    const planner = readFromLocalStorage("planner", {});
+    // const planner = readFromLocalStorage("planner", {});
 
-    planner[key] = value;
+    // planner[key] = value;
 
-    writeToLocalStorage("planner", planner);
+    // writeToLocalStorage("planner", planner);
+    writeToLocalStorage(key, value);
   }
+};
+
+const writeToLocalStorage = (key, value) => {
+  //value turned to string
+  const stringifiedValue = JSON.stringify(value);
+
+  localStorage.setItem(key, stringifiedValue);
 };
 
 timeBlocks.click(saveToLocalStorage);
