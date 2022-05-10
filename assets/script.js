@@ -107,6 +107,7 @@ const onReady = () => {
   console.log("ready");
   renderDate();
   renderTimeBlocks();
+  readFromLocalStorage();
 };
 
 const readFromLocalStorage = (key, defaultValue) => {
