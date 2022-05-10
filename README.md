@@ -14,6 +14,8 @@ The time blocks are colour coded, with grey representing the past, red for the p
 
 [Screenshot of deployed page](./assets/images/work-day-screenshot.png)
 
+The page is also mobile responsive, allowing the time blocks to be viewed on any size screen.
+
 # Technologies Used
 
 - HTML, CSS and JavaScript
