@@ -43,7 +43,7 @@ const timeBlocks = $("#time-blocks");
 //const currentDateStamp = moment();
 
 const renderDate = () => {
-  return moment().format("dddd, MMMM Do YYYY");
+  return moment().format("dddd, MMMM Do YYYY HH:mm");
 };
 
 $("#currentDay").text(renderDate);
