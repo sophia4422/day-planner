@@ -40,7 +40,7 @@ const workingHours = [
 const timeBlocks = $("#time-blocks");
 
 //accessing date and time
-const currentDateStamp = moment();
+//const currentDateStamp = moment();
 
 const renderDate = () => {
   return moment().format("dddd, MMMM Do YYYY");
