@@ -46,18 +46,9 @@ const renderDate = () => {
   return moment().format("dddd, MMMM Do YYYY");
 };
 
-// target save button
-//const saveButton = $("#saveBtn");
-
-//saveButton.on("click", function () {
-// console.log("button clicked");
-//});
-
 $("#currentDay").text(renderDate);
 
-$("#saveBtn").click(function () {
-  console.log("button clicked");
-});
+$("#saveBtn").click(function () {});
 
 const getClassName = (workingHour) => {
   const currentHour = moment().hour();
@@ -77,7 +68,6 @@ const renderTimeBlocks = () => {
   //for each working hour create and append time block to time-blocks
 
   const renderTimeBlock = (workingHour) => {
-    console.log(workingHour);
     //create timeblock
     const timeBlock = `<div class="row p-2 my-2 ${getClassName(
       workingHour.key
@@ -102,7 +92,6 @@ const renderTimeBlocks = () => {
 };
 
 const onReady = () => {
-  console.log("ready");
   renderDate();
   renderTimeBlocks();
   readFromLocalStorage();
@@ -131,12 +120,9 @@ const readFromLocalStorage = (key, defaultValue) => {
 const saveToLocalStorage = (event) => {
   const target = $(event.target);
   if (target.is("button")) {
-    console.log("click");
     const key = target.attr("data-hour");
-    console.log(key);
 
     const value = $(`textarea[data-textarea-key="${key}"]`).val().trim();
-    console.log(value);
 
     const planner = readFromLocalStorage("planner", {});
 
