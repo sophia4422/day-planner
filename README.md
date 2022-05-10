@@ -2,7 +2,9 @@
 
 This simple calendar application allows you schedule and save events throughout your day.
 
-View the deployed webpage here:
+View the deployed webpage here: https://sophia4422.github.io/day-planner/
+
+View the github repository here: https://github.com/sophia4422/day-planner/tree/dev
 
 # Description
 
